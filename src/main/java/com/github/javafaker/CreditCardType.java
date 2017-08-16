@@ -1,15 +1,19 @@
 package com.github.javafaker;
 
+import java.util.Random;
+
 public enum CreditCardType {
     VISA,
-    MASTERCARD,
-    DISCOVER,
-    AMERICAN_EXPRESS,
+    MASTER,
+    HIPER,
     DINERS_CLUB,
     JCB,
-    SWITCH,
-    SOLO,
-    DANKORT,
-    FORBRUGSFORENINGEN,
-    LASER
+    AMEX,
+    ELO;
+
+    public static CreditCardType getCreditCardType() {
+        CreditCardType[] values = CreditCardType.values();
+        Random random = new Random();
+        return values[random.nextInt(values.length - 1)];
+    }
 }
